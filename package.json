@@ -1,0 +1,21 @@
+{
+  "name": "ngraph.slpa",
+  "version": "0.1.0",
+  "description": "Graph community detection algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "keywords": [
+    "ngraph",
+    "community",
+    "detection",
+    "slpa"
+  ],
+  "author": "Andrei Kashcha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anvaka/ngraph.slpa"
+  }
+}
