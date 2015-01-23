@@ -14,15 +14,41 @@ test('it finds communities', function(t) {
     '}'
   ].join(' '));
 
-  var communities = findComminuities(g);
-  var names = communities.getNames();
-  var nodes = communities.getNodes();
-  var firstCommunity = nodes.a[0];
-  var secondCommunity = nodes.e[0];
+  var results = findComminuities(g);
 
-  t.ok(names.length > 1, 'At least two communities are found');
-  t.ok(isPartOfCommunity(['a', 'b', 'c', 'd'], firstCommunity), 'first community has expected members');
-  t.ok(isPartOfCommunity(['e', 'f', 'g', 'h'], secondCommunity), 'second community has expected members');
+  // let's get communities of node `a`:
+  var communitesOfA = results.nodes.a;
+  // Since the graph is constructed this way, we anticipate only one community
+  // for node a:
+  t.equals(communitesOfA.length, 1, 'Only one community for node a');
+
+  var mainCommunityOfA = communitesOfA[0];
+  // now that we have main community of `a` we can confirm that `b`, `c` and `d`
+  // are also there:
+  t.ok(mainCommunityOfA.probability > 0.5, 'node `a` is certainly here');
+  var allNodesInFirstCommunity = results.communities[mainCommunityOfA.name];
+  t.equals(allNodesInFirstCommunity.length, 4, 'Four neighbours with a');
+  t.ok(allNodesInFirstCommunity.indexOf('a') >= 0, 'neighbour is here');
+  t.ok(allNodesInFirstCommunity.indexOf('b') >= 0, 'neighbour is here');
+  t.ok(allNodesInFirstCommunity.indexOf('c') >= 0, 'neighbour is here');
+  t.ok(allNodesInFirstCommunity.indexOf('d') >= 0, 'neighbour is here');
+
+  // And do the same for communities of `e`
+  var communitesOfE = results.nodes.e;
+  // Since the graph is constructed this way, we anticipate only one community
+  // for node a:
+  t.equals(communitesOfE.length, 1, 'Only one community for node e');
+
+  var mainCommunityOfE = communitesOfE[0];
+  // now that we have main community of `a` we can confirm that `b`, `c` and `d`
+  // are also there:
+  t.ok(mainCommunityOfE.probability > 0.5, 'node `e` is certainly here');
+  var allNodesInSecondCommunity = results.communities[mainCommunityOfA.name];
+  t.equals(allNodesInSecondCommunity.length, 4, 'Four neighbours with e');
+  t.ok(allNodesInSecondCommunity.indexOf('a') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('b') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('c') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('d') >= 0, 'neighbour is here');
 
   t.end();
 });
