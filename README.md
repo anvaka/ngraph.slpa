@@ -2,10 +2,9 @@
 
 Graph community detection algorithm. This work is based on ["Towards Linear Time Overlapping Community
 Detection in Social Networks"](http://arxiv.org/pdf/1202.2465v1.pdf) paper from
-Jierui Xie and Boleslaw K. Szymanski. The paper describes an algorithm which finds
-overlapping communities within random graph.
+Jierui Xie and Boleslaw K. Szymanski.
 
-This project is part of [`ngraph`](https://github.com/anvaka/ngraph) family
+This project is part of [`ngraph`](https://github.com/anvaka/ngraph) family.
 
 # usage
 
@@ -27,10 +26,10 @@ for (var i = 0; i < nodeFooCommunities.length; ++i) {
 
 // We can also find what other nodes belong to `foo`'s
 // first community:
-var firstCommunityName = nodeFooCommunities[i].name;
+var firstCommunityName = nodeFooCommunities[0].name;
 var otherNodesFromCommunity = searchResult.communities[firstCommunityName];
 
-console.log('Nodes inside community', firstCommunityName);
+console.log('Community name:', firstCommunityName);
 for (var j = 0; j < otherNodesFromCommunity.length; ++j) {
   console.log(otherNodesFromCommunity[j]);
 }
