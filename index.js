@@ -45,7 +45,6 @@ function slpa(graph, T, r) {
      * One iteration of SLPA.
      */
     function processNode(listenerId) {
-      var listner = graph.getNode(listenerId);
       var saidWords = nodeMemory(random);
 
       graph.forEachLinkedNode(listenerId, saySomething);
