@@ -43,12 +43,12 @@ test('it finds communities', function(t) {
   // now that we have main community of `a` we can confirm that `b`, `c` and `d`
   // are also there:
   t.ok(mainCommunityOfE.probability > 0.5, 'node `e` is certainly here');
-  var allNodesInSecondCommunity = results.communities[mainCommunityOfA.name];
+  var allNodesInSecondCommunity = results.communities[mainCommunityOfE.name];
   t.equals(allNodesInSecondCommunity.length, 4, 'Four neighbours with e');
-  t.ok(allNodesInSecondCommunity.indexOf('a') >= 0, 'neighbour is here');
-  t.ok(allNodesInSecondCommunity.indexOf('b') >= 0, 'neighbour is here');
-  t.ok(allNodesInSecondCommunity.indexOf('c') >= 0, 'neighbour is here');
-  t.ok(allNodesInSecondCommunity.indexOf('d') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('e') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('f') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('g') >= 0, 'neighbour is here');
+  t.ok(allNodesInSecondCommunity.indexOf('h') >= 0, 'neighbour is here');
 
   t.end();
 });
