@@ -4,7 +4,7 @@
   "description": "Graph community detection algorithm",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap --branches=70 --lines=70 --statements=70 --functions=70 test/*.js"
   },
   "keywords": [
     "ngraph",
@@ -19,10 +19,10 @@
     "url": "https://github.com/anvaka/ngraph.slpa"
   },
   "devDependencies": {
-    "ngraph.fromdot": "^0.1.0",
-    "tap": "^0.5.0"
+    "ngraph.fromdot": "^7.0.0",
+    "tap": "^16.3.0"
   },
   "dependencies": {
-    "ngraph.random": "0.0.1"
+    "ngraph.random": "1.1.0"
   }
 }
