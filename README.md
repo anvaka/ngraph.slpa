@@ -1,4 +1,6 @@
-# ngraph.slpa [![Build Status](https://travis-ci.org/anvaka/ngraph.slpa.svg)](https://travis-ci.org/anvaka/ngraph.slpa)
+# ngraph.slpa 
+
+[![build status](https://github.com/anvaka/ngraph.slpa/actions/workflows/tests.yaml/badge.svg)](https://github.com/anvaka/ngraph.slpa/actions/workflows/tests.yaml)
 
 Graph community detection algorithm. This work is based on ["Towards Linear Time Overlapping Community
 Detection in Social Networks"](http://arxiv.org/pdf/1202.2465v1.pdf) paper from
